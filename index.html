@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Facial Injury Annotation Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Facial Injury Annotation Tool</h1>
+  <div class="controls">
+    <button id="select-input-folder">Select Input Folder</button>
+    <button id="select-output-folder">Select Output Folder</button>
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+    <button id="slice" disabled>Slice & Export</button>
+    <label for="jump-input"><strong>Jump To:</strong></label>
+    <input type="text" id="jump-input" placeholder="e.g. IMG05" />
+    <button id="jump-btn">Jump</button>
+  </div>
+
+  <div class="toolbar">
+    <span>Select Injury Type:</span>
+    <button class="tool" data-color="red" title="Laceration">🟥</button>
+    <button class="tool" data-color="green" title="Abrasion">🟩</button>
+    <button class="tool" data-color="blue" title="Ecchymosis">🟦</button>
+    <button class="tool" data-color="yellow" title="Sutured Laceration">🟨</button>
+    <button class="tool" data-color="black" title="Dried Blood">⬛️</button>
+    <button id="undo" title="Undo last rectangle">↩️</button>
+    <span class="tooltip-container">
+      <span class="tooltip-icon">❓</span>
+      <div class="tooltip-text">
+        <strong>Legend:</strong><br>
+        🟥 Red – Laceration<br>
+        🟩 Green – Abrasion<br>
+        🟦 Blue – Ecchymosis<br>
+        🟨 Yellow – Sutured Laceration<br>
+        ⬛️ Black – Dried Blood
+      </div>
+    </span>
+  </div>
+  
+
+  <div class="viewer">
+    <canvas id="canvas"></canvas>
+    <div id="image-name"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
